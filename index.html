@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="unseen">
+    <div class="min-h-screen bg-gray-100">
+        <!-- ======== Start Navbar  =========== -->
+        <nav class="bg-white h-16 shadow-sm pl-8 lg:pl-80 pr-8 w-full top-0 left-0 flex items-center">
+            
+            <div class="cursor-pointer lg:hidden" id="sidebar_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+            </div>
+            
+            <div class="relative hidden lg:block">
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-2 top-2 text-gray-500 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                <input type="text" name="search" class="w-72 shadow border-none rounded-3xl focus:outline-none py-2 bg-gray-100 text-base text-gray-600 pl-11 pr-2">
+            </div>
+
+            <div class="ml-auto items-center hidden lg:flex">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 cursor-pointer text-gray-600 hover:text-gray-900 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                      </svg>
+                </div>
+
+                <div class="ml-4 relative">
+                    <div class="cursor-pointer">
+                        <img id="nav_dropdown" class="h-8 w-8 rounded-full object-cover" src="https://ui-avatars.com/api/?background=0D8ABC&color=fff" alt="">
+                    </div>
+
+                    <div id="nav_drop_content" class="hidden absolute z-50 bg-white shadow-lg rounded-md w-48 mt-2 right-0 py-1">
+                        <div class="px-4 py-4 text-gray-500 capitalize">Manage account</div>
+                        <a href="#" class="block px-4 py-2 leading-5 text-sm text-gray-600 capitalize hover:bg-gray-200 transition">profile</a>
+                        <div class="border-t border-gray-100"></div>
+                        <a href="#" class="block px-4 py-2 leading-5 text-sm text-gray-600 capitalize hover:bg-gray-200 transition">preference</a>
+                        <div class="border-t border-gray-100"></div>
+                        <a href="#" class="block px-4 py-2 leading-5 text-sm text-gray-600 capitalize hover:bg-gray-200 transition">logout</a>
+
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- ======== End Navbar  =========== -->
+
+        <!-- ======== Start Sidebar  =========== -->
+
+        <div class="fixed left-0 top-0 bg-gray-800 w-72 h-full shadow-md flex flex-col z-10 transition-all" id="sidebar">
+            <div class="text-gray-200 bg-gray-900 text-center py-4 uppercase text-base font-semibold relative">
+                backslash
+                <svg id="sidebar_close" xmlns="http://www.w3.org/2000/svg" class="absolute block lg:hidden top-4 right-5 h-6 w-5 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+            </div>
+
+           <div class="flex flex-col justify-between flex-grow">
+            <div class="mt-5">
+                <a href="#" class="flex items-center text-gray-100 bg-gray-900 my-1 py-4 px-3 border-l-4 border-blue-600 capitalize">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    dashboard
+                </a>
+
+                <a href="#" class="flex items-center text-gray-100 hover:bg-gray-900 my-1 py-4 px-3 border-l-4 border-transparent hover:border-blue-600 transition capitalize">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                    category
+                </a>
+
+                <a href="#" class="flex items-center text-gray-100 hover:bg-gray-900 my-1 py-4 px-3 border-l-4 border-transparent hover:border-blue-600 transition capitalize">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    product
+                </a>
+
+
+                <a href="#" class="flex items-center text-gray-100 hover:bg-gray-900 my-1 py-4 px-3 border-l-4 border-transparent hover:border-blue-600 transition capitalize">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    users
+                </a>
+
+                <a href="#" class="flex items-center lg:hidden block text-gray-100 hover:bg-gray-900 my-1 py-4 px-3 border-l-4 border-transparent hover:border-blue-600 transition capitalize">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                      </svg>
+                    logout
+                </a>
+
+            </div>
+
+
+            <div class="lg:hidden block mb-3">
+                <div class="relative mx-5 mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-2 top-2 text-gray-500 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    <input type="text" name="search" class="w-full shadow border-none rounded-3xl focus:outline-none py-2 bg-gray-100 bg-gray-900 text-base text-gray-100 pl-11 pr-2">
+                </div>
+
+                <div class="flex mt-2 pt-3 px-5 border-t border-gray-100 items-center">
+                    <div class="cursor-pointer">
+                        <img id="nav_dropdown" class="h-8 w-8 rounded-full object-cover" src="https://ui-avatars.com/api/?background=0D8ABC&color=fff" alt="">
+                    </div>
+                    <p class="pl-2 capitalize text-gray-200">abdullah mia</p>
+                    
+                    <div class="ml-auto cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                          </svg>
+                    </div>
+                
+                </div>
+
+                
+
+            </div>
+           </div>
+
+        </div>
+
+        <!-- ======== End Sidebar  =========== -->
+
+
+        <!-- ======== Start Main-Content  =========== -->
+        <div class="pt-10 pr-8 pl-8 lg:pl-80">
+            <h2 class="text-3xl font-semibold text-gray-600 capitalize">welcome to dashboard</h2>
+        </div>
+        <!-- ======== End Main-Content  =========== -->
+
+
+    </div>
+
+
+    <script>
+        document.getElementById('nav_dropdown').addEventListener('click', function(){
+            document.getElementById('nav_drop_content').classList.toggle('hidden');
+        })
+
+        document.getElementById('sidebar_btn').addEventListener('click', function(){
+            document.getElementById('sidebar').classList.add('active')
+        })
+
+        document.getElementById('sidebar_close').addEventListener('click', function(){
+            document.getElementById('sidebar').classList.remove('active')
+        })
+        
+    </script>
+</body>
+</html>
